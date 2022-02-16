@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ArchwizardModule } from 'angular-archwizard';
 import { HttpClientModule } from '@angular/common/http';
+import {NgxTypedJsModule} from 'ngx-typed-js';
 //RUTAS
 import { app_routing } from "./app.routes";       
 import { AppComponent } from './app.component';
@@ -42,17 +43,21 @@ import { FilePickerModule } from  '../assets/file-picker/src/public_api';
 import { TestappComponent } from './components/testapp/testapp.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Component, Inject} from '@angular/core';
-
+import { RegisterComponent } from './components/index.paginas';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     TestappComponent,
     HeaderComponent,
+    RegisterComponent
     ],
   imports: [
+   
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
+    NgxTypedJsModule,
     FormsModule,
     BrowserAnimationsModule,
     HttpModule,
@@ -67,6 +72,7 @@ import { Component, Inject} from '@angular/core';
     CarouselModule,
     FilePickerModule,
     MatRadioModule,
+    ToastrModule.forRoot(), 
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,

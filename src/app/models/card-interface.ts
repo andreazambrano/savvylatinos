@@ -8,7 +8,10 @@ export interface CardInterface{
 	address?:string;
 	url?:string;
 	companyAddress?:string;
+	username?:string;
+	surname?:string;
 	country?:string;
 	city?:string;
 	status?:string;
+	images?:Array<string>;
 }
